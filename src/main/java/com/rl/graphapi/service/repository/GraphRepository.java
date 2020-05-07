@@ -29,7 +29,7 @@ public class GraphRepository {
 
         // creating the graph edges
         edges.forEach(edge ->
-                graph.addEdge(edge.getParent(), edge.getChild())
+            graph.addEdge(edge.getParent(), edge.getChild())
         );
 
         // persist

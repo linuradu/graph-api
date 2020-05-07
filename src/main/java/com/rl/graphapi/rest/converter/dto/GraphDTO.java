@@ -8,7 +8,6 @@ import java.util.Set;
 @Data
 @Builder
 public class GraphDTO {
-
     private Long id;
     private Set<NodeDTO> nodes;
 }

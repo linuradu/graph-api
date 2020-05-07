@@ -29,7 +29,7 @@ public class GraphController {
 
     @PutMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public GraphDTO createGraph(@RequestBody Set<Edge> edges) {
+    public GraphDTO createGraph(@RequestBody final Set<Edge> edges) {
 
         return graphConverter.toGraphDTO(graphService.createGraph(edges));
     }

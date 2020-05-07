@@ -1,9 +1,14 @@
 package com.rl.graphapi.rest.exception;
 
-import lombok.Value;
-
-@Value
 public class HttpError {
 
     private String message;
+
+    public HttpError(final String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }

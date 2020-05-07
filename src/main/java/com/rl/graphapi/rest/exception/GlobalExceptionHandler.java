@@ -16,10 +16,14 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(GraphRuntimeException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-//    @ResponseBody
+    @ResponseBody
     public HttpError handleException(final GraphRuntimeException exception) {
-        LOG.error("Exception handled:", exception);
+        LOG.error("Exception handled: ", exception);
 
         return new HttpError(exception.getMessage());
     }
+
+    // *Note:
+    //  If we want to not use @ResponseBody, we need to return ResponseEntity
+    //  return new ResponseEntity<>(new HttpError(exception.getMessage()), new HttpHeaders(), HttpStatus.BAD_REQUEST);
 }
